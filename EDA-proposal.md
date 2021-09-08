@@ -10,7 +10,9 @@ The goal of this project is to support WTWY decisionmaking in placing their staf
 * What dataset(s) do you plan to use, and how will you obtain the data? What is an individual sample/unit of analysis in this project? What characteristics/features do you expect to work with? If modeling, what will you predict as your target?
 
 I plan to use MTA turnstyle data, which is available on the MTA's website, to understand which subway stations have higher levels of foottraffic. This data includes timeseries information, which will provide insights on which times of day a given station is busiest. The dataset also includes information on the number of turnstyles at a given station, which acts as a proxy for station size. Since WTWY's street team is limited in size, the organization needs to consider not only what time of day to place their staff, but also which stations size provide an effective venue for in-person engagement (engagement may be more difficult in Times Square, for example, versus a neighborhood stop). 
+
 Besides MTA turnstyle data, I hope to incorporate geographic and demographic data to provide nuance to the subway station data. NYC Open Data has locations of colleges and universities in NYC - proximity to a subway station (1/4 mi) will likely improve WTWY's ability to reach individuals receptive to their cause. Additionally, income data available on data.cccnewyork.org can help inform which locations will improve WTWY's ability to reach individuals with the disposible income to attend and to contribute to their gala. To augment this income data, I will also consider the proximity of Whole Foods and Trader Joes (1/4 mi) from subway stations as shoppers in these stores tend to have higher levels of income and education. 
+
 I do not plan to model for this project
 
 #### Tools:
