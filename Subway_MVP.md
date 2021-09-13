@@ -25,6 +25,8 @@ Based on this analysis, WTWY should place their street teams at the following su
 2) 28 ST
 3) BEDFORD AV
 
+The project will provide a timeseries analysis for each station to better direct WTWY's teams.
+
 
 
 
