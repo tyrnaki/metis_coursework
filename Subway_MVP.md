@@ -9,7 +9,7 @@ In order to make the list of subway stations the most actionable for the client,
 3) Subway stations located in higher income zip codes & proximity to higher quality grocery stores -> This provides street teams with an opportunity to reach individuals that may donate to WTWY.
 4) Subway stations located near universities -> This provides street teams with an opportunity to reach individuals that are interested in tech. 
 
-<html><iframe src="subways_and_universities.html" height="500" width="500"></iframe></html>
+<html><iframe src="https://github.com/tyrnaki/metis_coursework/blob/main/subways_and_universities.html" height="500" width="500"></iframe></html>
 
 
 
