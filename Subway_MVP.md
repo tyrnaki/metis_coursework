@@ -9,11 +9,9 @@ In order to make the list of subway stations the most actionable for the client,
 3) Subway stations located in higher income zip codes & proximity to higher quality grocery stores -> This provides street teams with an opportunity to reach individuals that may donate to WTWY.
 4) Subway stations located near universities -> This provides street teams with an opportunity to reach individuals that are interested in tech. 
 
-<html><iframe src="https://github.com/tyrnaki/metis_coursework/blob/main/subways_and_universities.html" height="500" width="500"></iframe></html>
+![](subways_and_universities.png)
+
+The map above highlights which subway stations (red icon) meet the four criteria. The blue icons represent universities while the green icons represent stores. The red circles around the red icons represent 1/4 mile radiuses, showing proximity to universities and stores. 
 
 
 
-
-The figure depicts the model (red) plotted against the actual data points. The prediction interval is plotted in green.
-
-This result suggests that budget may have a significant positive impact on a film's revenue. However, the magnitude of the model's residuals makes it clear that budget is not the only important factor in determining the success of a film.
