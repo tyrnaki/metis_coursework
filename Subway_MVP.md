@@ -25,7 +25,7 @@ The map below used GEOPY and FOLIUM to highlight which subway stations (red icon
 
 Note - FOLIUM provides an interactive HTML map, I am trying to figure out how to render it in markdown. 
 
-![map](map.png)
+![map](MAP2.png)
 
 Based on this analysis, WTWY should place their street teams at the following suggested stations:
 
