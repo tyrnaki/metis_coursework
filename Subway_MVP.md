@@ -13,6 +13,14 @@ The subway stations that met criteria 1-3 appear in the dataframe below:
 
 ![df](dataframe.png)
 
+The following stations have had the most cumulative ridership over the analysis timeperiod:
+
+![df2](CumulativeEntries.png)
+
+Meanwhile, the following stations have the highest average income:
+
+![df3](AverageIncomeData.png)
+
 The map below used GEOPY and FOLIUM to highlight which subway stations (red icon) meet criteria 3 & 4. The blue icons represent universities while the green icons represent stores. The red circles around the red icons represent 1/4 mile radiuses, showing proximity to universities and stores. 
 
 Note - FOLIUM provides an interactive HTML map, I am trying to figure out how to render it in markdown. 
@@ -21,9 +29,10 @@ Note - FOLIUM provides an interactive HTML map, I am trying to figure out how to
 
 Based on this analysis, WTWY should place their street teams at the following suggested stations:
 
-1) W 4 ST - WASHINGTON SQ
-2) 28 ST
-3) BEDFORD AV
+1) W 4 ST - WASHINGTON SQ (based on income, ridership, and proximity to universities & stores)
+2) 28 ST (based on income, ridership, and proximity to universities & stores)
+3) BEDFORD AV (based on income, and proximity to universities & stores)
+4) CANAL ST (based on income, ridership)
 
 The project will provide a timeseries analysis for each station to better direct WTWY's teams.
 
