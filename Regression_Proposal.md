@@ -29,7 +29,7 @@ The individual sample for this project will be a property sold in the DC area in
 - Sold price
 - Difference between asking & sold
 
-The target for this model will be the potential deviation from a given property's asking price.
+The target for this model will be the potential deviation from a given property's asking price. For example, a house with an asking price of $500k could expect a $50k increase in its selling price ($550k).
 
 #### Tools:
 * How do you intend to meet the tools requirement of the project? 
@@ -43,4 +43,4 @@ I would like to use geopy to add geographic data to the regression as well as fo
 #### MVP Goal:
 * What would a [minimum viable product (MVP)](./mvp.md) look like for this project?
 
-An MVP for this project would be a regression that consideres the features I outline above that provides reasonable predicitions for real estate sales. 
+An MVP for this project would be a regression with regression charts that consider the features I outline above that provides reasonable predicitions for real estate sales. A more developed version of this project would include geographic data and corresponding maps. 
