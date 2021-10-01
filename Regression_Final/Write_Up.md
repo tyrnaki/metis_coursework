@@ -35,9 +35,7 @@ This project used Linear regression and Lasso regression in order to maintain mo
 
 *Model Evaluation and Selection*
   
-The entire training dataset of 59,400 records was split into 80/20 train vs. holdout, and all scores reported below were calculated with 5-fold cross validation on the training portion only. Predictions on the 20% holdout were limited to the very end, so this split was only used and scores seen just once.
-
-The official metric for DrivenData was classification rate (accuracy); however, class weights were included to improve performance against F1 score and provide a more useful real-world application where classification of the minority class (functional needs repair) would be essential.
+The data was split using train_test_split. When evaluated with different models, the data was split and randomly validated through k-fold (5 splits). Between Linear Regression and Lasso Regression, Lasso resulted in better R^2 scores.
 
 **Linear Regression Scores:** 
    - Train R2: 0.8579
@@ -46,6 +44,18 @@ The official metric for DrivenData was classification rate (accuracy); however, 
 **Lasso Regression Scores:** 
    - Train R2: 0.8580
    - Test R2: 0.8622
+   - MAE: $89,836
+
+The scores above include "tax assessed value" as a feature. While this is a dollar-value figure, it is important in determining a home's value and often is a benchmark from which home values are built upon. Excluding the feature yeilded a much lower R^2 and a higher MAE, as compared to the above. As a result, I highlight values that include the tax assessed value.
+
+**Linear Regression Scores w/o tax assessed value:** 
+   - Train R2: 0.0.494
+   - Test R2: 0.454
+
+**Lasso Regression Scores w/o tax assessed value:** 
+   - Train R2: 0.0.494
+   - Test R2: 0.454
+   - MAE: $197,647
 
 ## Tools
 - BeautifulSoup for web scraping
