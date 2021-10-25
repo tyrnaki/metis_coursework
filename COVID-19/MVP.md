@@ -19,15 +19,24 @@ My baseline model consideres the target of "Have you tested positive for COVID-1
 - Attending Events Score (numeric score based on categorical responses to attending events)
 - Preexisting Condition Score (numeric score based on categorical responses to having health conditions)
 
+I plan to focus on a logistic regression model as it has easier interpretability.
+
 Given that the prevalence of positive COVID-19 cases is low in the dataset (see graphic below), I oversampled the positive cases to have an equal amount of positive and negative cases.
 
-<img src="data-spread.png" alt="drawing" width="700"/>
-
+<img src="data-spread.png" alt="drawing" width="400"/>
 
 The main metric by which I plan to assess this model is recall because the impact of missing a positive COVID-19 case is higher than misclassifying a negative case as a positive. 
 
+Using an oversampled dataset, I was able to improve the recall of the logistic regression model significantly. 
+<img src="Confusion_M1.png" alt="drawing" width="350"/>
+<img src="Confusion_M2.png" alt="drawing" width="350"/>
+
+While the model's results are able to successfully identify more COVID-19 cases than not, the model's interpretability needs improvement. The coefficients do not logically make sense given general understanding of how COVID-19 spreads:
+
+<img src="Coeff.png" alt="drawing" width="400"/>
+
+I plan to revisit my data such that the features are more in line with general COVID-19 understanding. 
 
 
 
-The project goal is to be able to produce a predictive model that can estimate a given property's ultimate selling price. Given the MAE of this model, I need to further feature engineer to reduce the MAE to an acceptable level. 
 
