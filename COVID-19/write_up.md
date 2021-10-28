@@ -2,50 +2,65 @@
 Walter Tyrna
 
 ## Abstract
-The goal of this project is to create an interpretable classification model based on data from a study conducted by the Imperial College of London during the first year of the pandemic.
+The goal of this project is to create an interpretable classification model based on data from a [study conducted by the Imperial College of London (ICL)](https://github.com/YouGov-Data/covid-19-tracker) during the first year of the pandemic.
 
-The model aims to predict COVID-19 cases by behavioral, health, and demographic data. As the data was collected before vaccines for COVID-19 became available, the
-I used monthly ridership data from [CaBi's website](https://www.capitalbikeshare.com/system-data) and augmented it with location data from [DC Open Data](https://opendata.dc.gov/datasets/neighborhood-clusters/explore) and Geopy
+The model aims to predict COVID-19 cases by behavioral, demographic, and health data. As the data was collected before vaccines for COVID-19 became available, the utility of the model comes from its interpretability where it can shed light on which factors most determined COVID-19 cases. This information can help policymakers better understand how to better mitigate a similar pandemic in the future. 
 
 ## Design
-This project considered aggregate ridership data for each dock in CaBi's network. I specifically focused on "start_ride" as a proxy for the number of bicycles available at a given dock (as rides cannot start without a bike present). This project looks at ridership from both a station and a neighborhood level, as individuals would usually consider several bikeshare docks within their given area. 
+The ICL study consisted of an extensive questoinnare with over 100 questions per person surveyed. I scoped the data to 16 categories that focus on an individual's behavior, demographic, and health data. 
 
-Bicycle availablity at both a neighborhood and dock level allows CaBi to determine if a given area doesn't have enough bicycles, or if a specific dock needs maintenence.
+I chose to primarily focus on a logistic model to achieve better interpretability; however, I did consider other models (knn and tree-based models) to ensure that the ultimate model for this project is achieving optimal results. As the target data is extremely unequal (fewer than 500 COVID-19 cases to nearly 35,000 negative cases), I employed both SMOTE and oversampling techniques to improve model performance. 
+
+Recall and AUC score are the main metrics that I use to determine model success as the impact of incorrectly classiying a COVID-19 case is greater than a false positive (someone without COVID-19 testing positive). 
 
 ## Data
-The dataset from CaBi's website is made up of individual ride data to include 'start station', 'end station', times, and coordinates, aggregated during monthly intervals (12 columns per sheet, each sheet with at least 300,000 rows). 
+Each row in the ICL dataset consists of an individual's responses to the COVID-19 survey. Once I scoped the data, each row included the following features:
 
-After cleaning and aggegating the data in python, the csv used in my analysis includes timeseries data for 656 bikeshare docks (columns with two years worth of data, at a month-level), as well as columns indicating coordinate, zipcode, and neighborhood (21 columns, 656 rows).
+- Coming into contact with someone who had tested positive for COVID-19 (categorical)
+- Travel to area with high COVID-19 prevalence (categorical)
+- Facemask use (categorcial)
+- Handwashing habits (categorical)
+- Use of public transit (categorical)
+- Shopping frequency (categorical)
+- Gender (categorical)
+- Employment Status (categorcial)
+- Weight (numeric)
+- Age (numeric)
+- Household Size (categorical - this improved model performance)
+- Attended small events (categorical)
+- Attended medium events (categorical)
+- Attended large events (categorical)
+- Hosted Guests (categorical)
+- Preexisting Condition Score (numeric score based on categorical responses to having health conditions)
+
+The the dataset that yielded the best performance and interpretability for this project consisted of X rows and Y columns. 
 
 ## Algorithms
-*Aggregation of Bikeshare Ride Data - Python*
-1. Combine monthly ride-level data (over ten csv's)
-2. Aggregate the data to determine rides began per station per month
-3. Export aggregated csv to Google Sheets
+*EDA*
+1. Download USA datset from ICL Github
+2. Select behavioral, demographic and health data. 
+3. Create dummy variables for categorical features and aggregated variables.
+4. Create seperate datasets for behavioral, health, and aggregate data. 
 
-*Determine Bikeshare Location data - Python*
-1. Use bikeshare dock coordinate locations with geopy to determine zipcodes for each station
-2. Upload shape files of DC neighborhoods, check if dock coordinate in neighborhood to determine neighborhood where applicable
-3. Export location csv to Google Sheets
+*Classification Model Exploration*
+1. Upload datasets to "Classification Sandbox"
+2. Determine target imbalance and adjust using sklearn.resample to upsample data where 0 and 1 have equal counts
+3. Test upsampled data on KNN, Logistic Regression, Decision Tree, and Random Forest models.
+4. Determine most effective model through recall and AUC scores (Logistic Regression wins).
 
-*EDA in Google Sheets*
-1.  Upload and combine Bikeshare Ride and Location data into Google Sheets
-2.  Compare ridership trends per dock on a month-to-month and year-to-year level
-3.  Compare ridership trends per neighborhood on a month-to-month and year-to-year level
-4.  Determine when docks became introduced in the system
-5.  Create graphics based on above
-6.  Export csv's based on above to Tableau
+*Logistic Regression Exploration*
+1. Upload datasets to "Logistic Regression Sandbox"
+2. Test different versions of the dataset through the following
+- Test SMOTE and upsampled data across logistic regression models with different C values.
+- Determine optimal C and data types based on recall and AUC scores.
+3. Create graphic with key coefficients
 
-*EDA in Tableau*
-1. Upload csv's of ridership changes over time into Tableau 
-2. Create maps based on data
 
 ## Tools
 - Pandas for data manipulation
-- Geopy, JSON, and Shapely for data geographic information
-- TQDM for function validation
-- Google Sheets for EDA and visualizations
-- Tableau for EDS and visualizations
+- SKlearn for model implementation
+- Imblearn to address model imbalance
+- Matplotlib for graphics
 
 ## Communication
-Slides and visuals (slide deck and [tableau dashboard](https://public.tableau.com/app/profile/walter.tyrna/viz/ChangesinCaBiRidershipsummer20-21/Dashboard1)) presented.
+Slides and visuals presented.
