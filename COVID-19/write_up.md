@@ -4,7 +4,7 @@ Walter Tyrna
 ## Abstract
 The goal of this project is to create an interpretable classification model based on data from a [study conducted by the Imperial College of London (ICL)](https://github.com/YouGov-Data/covid-19-tracker) during the first year of the pandemic.
 
-The model aims to predict COVID-19 cases by behavioral, demographic, and health data. As the data was collected before vaccines for COVID-19 became available, the utility of the model comes from its interpretability where it can shed light on which factors most determined COVID-19 cases. This information can help policymakers better understand how to better mitigate a similar pandemic in the future. 
+The model aims to predict COVID-19 cases using behavioral, demographic, and health data. As the data was collected before vaccines for COVID-19 became available, the utility of the model comes from its interpretability where it can shed light on which factors most determined COVID-19 cases. This information can help policymakers better understand how to better mitigate a similar pandemic in the future. 
 
 ## Design
 The ICL study consisted of an extensive questoinnare with over 100 questions per person surveyed. I scoped the data to 16 categories that focus on an individual's behavior, demographic, and health data. 
@@ -33,20 +33,20 @@ Each row in the ICL dataset consists of an individual's responses to the COVID-1
 - Hosted Guests (categorical)
 - Preexisting Condition Score (numeric score based on categorical responses to having health conditions)
 
-The the dataset that yielded the best performance and interpretability for this project consisted of X rows and Y columns. 
+The the dataset that yielded the best performance and interpretability for this project consisted of 32060 rows and 31 columns. 
 
 ## Algorithms
 *EDA*
 1. Download USA datset from ICL Github
 2. Select behavioral, demographic and health data. 
-3. Create dummy variables for categorical features and aggregated variables.
-4. Create seperate datasets for behavioral, health, and aggregate data. 
+3. Create dummy variables for categorical features and aggregate variables.
+4. Create seperate datasets for behavioral, health, and combined data. 
 
 *Classification Model Exploration*
 1. Upload datasets to "Classification Sandbox"
 2. Determine target imbalance and adjust using sklearn.resample to upsample data where 0 and 1 have equal counts
 3. Test upsampled data on KNN, Logistic Regression, Decision Tree, and Random Forest models.
-4. Determine most effective model through recall and AUC scores (Logistic Regression wins).
+4. Determine most effective dataset and model through recall and AUC scores (combined dataset with Logistic Regression wins).
 
 *Logistic Regression Exploration*
 1. Upload datasets to "Logistic Regression Sandbox"
