@@ -3,9 +3,9 @@
 #### Question/need:
 * What is the framing question of your analysis, or the purpose of the model/system you plan to build? Who benefits from exploring this question or building this model/system?
 
-Background: Synthetic drugs have increasingly driven US overdose deaths over the last five years. Fentanyl and methampetamines are the main drug types leading to overdoses but Novel Psychoactive Substances (NPS) have also caused an increasing share of overdoses. NPS, as compared to fentanyl or methampetamines, are made up of a large vareity of unregulated substances that US government policymakers and law enforcement struggle to keep track of until they already present an issue. 
+Background: Synthetic drugs have increasingly driven [US overdose deaths](https://www.npr.org/2021/07/14/1016029270/drug-overdoses-killed-a-record-number-of-americans-in-2020-jumping-by-nearly-30) over the last five years. Fentanyl and methampetamine are the main drug types leading to overdoses but Novel Psychoactive Substances (NPS) have also caused an increasing share of overdoses. NPS, as compared to fentanyl or methampetamines, are made up of a large vareity of unregulated substances that US government policymakers and law enforcement struggle to keep track of until they already present an issue. 
 
-Purpose: This analysis aims to use natural language processing modeling techniques to highlight which NPS are used by posters on the reddit group "Research Chemicals" and to determine which substances have the most detrimental effects on users. This information can help highlight emerging trends in drug use as warning to US government policymakers.
+Purpose: This analysis aims to use natural language processing modeling techniques to highlight which NPS are used by posters on the reddit group ["Research Chemicals"](https://www.reddit.com/r/researchchemicals/) and to determine which substances have the most detrimental effects on users. This information can help highlight emerging trends in drug use as warning to US government policymakers.
 
 Customers: Government policymakers and law enforcement.
 
