@@ -19,6 +19,7 @@ This project primarily will use forum posts scraped from the Research Chemicals 
 * How do you intend to meet the tools requirement of the project? 
 
 EDA: Pandas to clean & explore the data
+
 NLP: NLP packages to preprocess and model data
 
 * Are you planning in advance to need or use additional tools beyond those required?
