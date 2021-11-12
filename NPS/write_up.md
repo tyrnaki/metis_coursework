@@ -17,13 +17,13 @@ Each data point in this project is a unique reddit post with at least 100 words.
 To expand the corpus of stop words, I included a corpus of the [10,000 most common English words in order of frequency](https://github.com/first20hours/google-10000-english). 
 
 ## Algorithms
-*Data Collection* (clean)
+*Data Collection* ([clean](https://github.com/tyrnaki/metis_coursework/blob/6ea14b87b72de6ab2f4b27789e1fddb7b635cd39/NPS/Reddit%20Scraper.ipynb))
 1. Pull data from the PushShift API.
 2. Build function to determine unicode dates & build in sleep to avoid scrape time out.
 3. Scope posts to only include those with 100 words.
 4. Export data to csv.
 
-*Corpus Cleaning & EDA* (clean, sandbox1, sandbox2)
+*Corpus Cleaning & EDA* ([clean](https://github.com/tyrnaki/metis_coursework/blob/main/NPS/Corpus%20Cleaning%20%26%20EDA.ipynb), [sandbox1](https://github.com/tyrnaki/metis_coursework/blob/6ea14b87b72de6ab2f4b27789e1fddb7b635cd39/NPS/Sandbox/Another%20One.ipynb), [sandbox2](https://github.com/tyrnaki/metis_coursework/blob/6ea14b87b72de6ab2f4b27789e1fddb7b635cd39/NPS/Sandbox/Text%20Processing%20Sandbox.ipynb))
 1. Remove capital letters and punctuation from corpus.
 2. Create new corpora of English stopwords.
 3. Remove stopwords from corpus and stem text.
@@ -31,7 +31,7 @@ To expand the corpus of stop words, I included a corpus of the [10,000 most comm
 5. Remove drug related terms and other noise.
 6. Export data to csv.
 
-*Latent Dirichlet Allocation (LDA) & EDA* (clean)
+*Latent Dirichlet Allocation (LDA) & EDA* ([clean](https://github.com/tyrnaki/metis_coursework/blob/6ea14b87b72de6ab2f4b27789e1fddb7b635cd39/NPS/Latent%20Dirichlet%20Allocation%20(LDA).ipynb))
 1. Upload dataset and apply tokenization
 2. Use pyLDAvis to examine and adjust parameters (min_df, max_df, number of topics)
 3. Once topics cohesive, assign topic names
