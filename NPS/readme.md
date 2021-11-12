@@ -4,4 +4,4 @@ See my project [write up](https://github.com/tyrnaki/metis_coursework/blob/2e924
 
 See my [MVP](https://github.com/tyrnaki/metis_coursework/blob/2e924195146d261a089f1a53c092021cf7c239eb/NPS/MVP.md)
 
-See my slide deck
+See my [slide deck](https://github.com/tyrnaki/metis_coursework/blob/803c176c58ce1c6d0e28c353de718eb68f77f0d7/NPS/NPS_presentation.pdf)
