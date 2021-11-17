@@ -1,4 +1,4 @@
-### Scraping Information from Illicit Advertisements using Deep Learning
+### Scraping Information from Illicit Chemical Advertisements using Deep Learning
 
 #### Question/need:
 * What is the framing question of your analysis, or the purpose of the model/system you plan to build? Who benefits from exploring this question or building this model/system?
