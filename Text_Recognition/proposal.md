@@ -8,7 +8,7 @@ Background: Many of the chemicals used to create synthetic drugs such as fentany
 <img src="https://github.com/tyrnaki/metis_coursework/blob/main/Text_Recognition/images/Combined.png" alt="drawing" width="500" position='absolute' float='right'/>
 
 
-Purpose: This project aims to use deep learning to recognize and extract text from images. This will help analysts looking at open source commerical data more quickly collect and connect data associated with illicit chemical distributors, in turn supporting investigations. 
+Purpose: This project aims to use deep learning to recognize and extract text from images. This will help analysts looking at open source commerical data more quickly collect and connect data associated with illicit chemical distributors, in turn supporting investigations and overall improving understanding of the synthetic drug supply chain. 
 
 Customers: Government analysts.
 
