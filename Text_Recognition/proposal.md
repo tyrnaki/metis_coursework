@@ -3,16 +3,21 @@
 #### Question/need:
 * What is the framing question of your analysis, or the purpose of the model/system you plan to build? Who benefits from exploring this question or building this model/system?
 
-Background: Many of the chemicals used to create synthetic drugs such as fentanyl and methamphetamine are openly advertised online by chemical distributors (largely in China). These distributors often try to evade chemical regulations and subsequent online marketplace regulations in China and the United States through advertisements using terms and spellings that are not easily machine readable, as well as through embedding contact and product information in images. 
+Background: Many of the chemicals used to create synthetic drugs such as fentanyl and methamphetamine are [openly advertised online by chemical distributors](https://www.scmp.com/magazines/post-magazine/long-reads/article/3123109/chinas-fentanyl-connection-suppliers-fuelling) (largely in China). These distributors often try to evade chemical regulations and subsequent online marketplace regulations in China and the United States through advertisements using terms and spellings that are not easily machine readable, as well as through embedding contact and product information in images. 
+
+<img src="https://github.com/tyrnaki/metis_coursework/blob/main/Text_Recognition/images/Combined.png" alt="drawing" width="500" position='absolute' float='right'/>
+
 
 Purpose: This project aims to use deep learning to recognize and extract text from images. This will help analysts looking at open source commerical data more quickly collect and connect data associated with illicit chemical distributors, in turn supporting investigations. 
 
-Customers: Government analyists.
+Customers: Government analysts.
 
 #### Data Description:
 * What dataset(s) do you plan to use, and how will you obtain the data? What is an individual sample/unit of analysis in this project? What characteristics/features do you expect to work with? If modeling, what will you predict as your target?
 
-This project primarily will use forum posts scraped from the Research Chemicals subreddit. The scrape pulls the top 100 posts per week from 2021 and 2020, the corpus will be made up of 1000+ posts with at least 100 words. 
+The algorithm will be trained and tested using images from the [COCO-Text dataset](https://bgshih.github.io/cocotext/#h2-download).  
+
+Ultimately, I will test the model on images scraped from business to business wholesale websites used by chemical distributors. As these advertisements are limited, I will use them as a final check for the utility of my model. 
 
 
 #### Tools:
