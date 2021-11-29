@@ -1,6 +1,6 @@
 ## Towards Text Recognition in Illicit Advertisements: Character Recognition in Images
 
-The goal of this project is to begin to create a process through which text can be scraped from online advertisements tied to illicit supply chains. Oftentimes, individuals supporting the drug trafficking networks use text embedded in images to avoid basic online censorship (see example below). This effort will help analysts and investigators collect information related to these suppliers (phone numbers, products offered, etc). 
+The goal of this project is to begin to create a process through which text can be scraped from online advertisements tied to illicit supply chains. Oftentimes, organizations that supply raw chemicals towards for drug production (fentanyl, for example) use text embedded in images to avoid basic online censorship (see example below). This effort will help analysts and investigators collect information related to these suppliers (phone numbers, products offered, etc). 
 
 <img src="https://github.com/tyrnaki/metis_coursework/blob/main/Text_Recognition/images/huanhao.jpg" alt="drawing" width="400" position='absolute' float='right'/>
 
