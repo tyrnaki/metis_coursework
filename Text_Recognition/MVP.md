@@ -11,7 +11,7 @@ In order to begin to extract text from these images, I plan to use a neural netw
 
 On training data, the initial NN yeilded an accuracy of 0.7154 and a loss of 0.9133; while on test data it yeilded similar results with an accuracy of 0.7125 and loss of 0.9403.
 
-In order to tie this model back to the project's business case, I took screenshots of characters as seen in some illicit advertisements. The model was able to predict well on more distict characters (A & M) but had difficulty distinguishing between characters with some similarities in shape (0 versus U, for example). 
+In order to tie this model back to the project's business case, I took screenshots of characters in illicit advertisements. The model was able to predict well on more distict characters (A & M) but had difficulty distinguishing between characters with some similarities in shape (0 versus U, for example). 
 
 <img src="https://github.com/tyrnaki/metis_coursework/blob/main/Text_Recognition/images/A_results.png" alt="drawing" width="400" position='absolute' float='left'/>
 <img src="https://github.com/tyrnaki/metis_coursework/blob/main/Text_Recognition/images/O_results.png" alt="drawing" width="400" position='absolute' float='right'/>
