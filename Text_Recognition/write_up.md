@@ -42,7 +42,7 @@ There are 62 classes of character with at least 1000 images per character (0-9, 
 
 ## Tools
 - Pandas for data manipulation
-- Matplotlib for graphics
+- Matplotlib & Plotly for graphics
 - Numpy for array/matrix creation and manipulation
 - Splitfolders for data seperation
 - Tensorflow/Keras for Neural Network creation 
