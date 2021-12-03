@@ -1,4 +1,4 @@
-# Deep learning for Text Recognition in Illicit Advertisements
+# Deep Learning for Text Recognition in Illicit Advertisements
 Walter Tyrna
 
 ## Abstract
