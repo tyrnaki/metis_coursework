@@ -13,12 +13,12 @@ I run two models for this project: a simple Convolutional Neural Network (CNN) a
 There are 62 classes of character with at least 1000 images per character (0-9, a-z, A-Z). Each character has handwritten, computer generated (font), and real life examples. In total the dataset consists of 74,185, 128x128 images. 
 
 ## Algorithms
-*Data Upload & EDA* ([clean](https://github.com/tyrnaki/metis_coursework/blob/6ea14b87b72de6ab2f4b27789e1fddb7b635cd39/NPS/Reddit%20Scraper.ipynb))
+*Data Upload & EDA* ([clean](https://github.com/tyrnaki/metis_coursework/blob/0ac719dbf13a1de40706e5b9542500b9f6d65ae8/Text_Recognition/Split%20Folders%20+%20EDA.ipynb))
 1. Download datset from Chars74k
 2. Create train, validate, test folders
 3. Explore data
 
-*Model Creation* ([clean]())
+*Model Creation* ([clean](https://github.com/tyrnaki/metis_coursework/blob/0ac719dbf13a1de40706e5b9542500b9f6d65ae8/Text_Recognition/Model%20Testing%20Clean.ipynb))
 1. Set train, validate, test datsets
 2. Establish parameters for early stopping (patience=2 for val_loss)
 3. Create simple CNN
@@ -33,7 +33,7 @@ There are 62 classes of character with at least 1000 images per character (0-9, 
 12. Plot combined transfer learning and CNN model results
 13. Create visualizations for model architecture 
 
-*Model Evaluation* ([clean]())
+*Model Evaluation* ([clean](https://github.com/tyrnaki/metis_coursework/blob/0ac719dbf13a1de40706e5b9542500b9f6d65ae8/Text_Recognition/Model%20Evaluation%20Clean.ipynb))
 1. Upload saved models
 2. Create function to upload and test real life image screenshots
 3. Evaluate model performance on real life images
@@ -49,4 +49,4 @@ There are 62 classes of character with at least 1000 images per character (0-9, 
 
 
 ## Communication
-Slides and visuals presented.
+Slides and visuals presented; [interactive plotly](https://chart-studio.plotly.com/~walter.tyrna/3/#/plot) confusion matrix.
