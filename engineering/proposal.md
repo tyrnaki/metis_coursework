@@ -12,7 +12,7 @@ Customers: Government policymakers and law enforcement.
 #### Data Description:
 * What dataset(s) do you plan to use, and how will you obtain the data? What is an individual sample/unit of analysis in this project? What characteristics/features do you expect to work with? If modeling, what will you predict as your target?
 
-This project primarily will use forum posts from the Research Chemicals subreddit. Given the limitations of the Reddit API, historic posts (aka not current) will be scraped using the PushShift API; I will also use Reddit's API to pull up-to-date posts. The scrape will pull from at least the past six months of data. Each post captured will have at least 100 characters to ensure sufficient complexity, I will aim to have a corpus of at least 5000 posts. 
+This project primarily will use forum posts from the [Research Chemicals](https://www.reddit.com/r/researchchemicals/) subreddit. Given the limitations of the Reddit API, historic posts (aka not current) will be scraped using the PushShift API; I will also use Reddit's API to pull up-to-date posts. The scrape will pull from at least the past six months of data. Each post captured will have at least 100 characters to ensure sufficient complexity, I will aim to have a corpus of at least 5000 posts. 
 
 
 #### Tools:
