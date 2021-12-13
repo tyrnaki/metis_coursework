@@ -6,6 +6,10 @@ Though a combination of the Reddit and PushShift APIs, I was able to collect one
 
 <img src="https://github.com/tyrnaki/metis_coursework/blob/main/engineering/images/Dangerous_Drugs_One-Year.png" alt="drawing" width="400" position='absolute' float='right'/>
 
+Using my pretrained LDA model, I successfully created a local Streamlit webapp using static data to display drug types highlighted in today's top postings on the Research Chemicals subreddit:
+
+<img src="https://github.com/tyrnaki/metis_coursework/blob/main/engineering/images/stream_test.png" alt="drawing" width="400" position='absolute' float='right'/>
+
 I plan to export the results of my NLP analysis to a webapp using Streamlit. In order to create a regularly updating app, I will automate daily pulls from Reddit's API with a cron scheduler. 
 
 <img src="https://github.com/tyrnaki/metis_coursework/blob/main/engineering/images/workflow.png" alt="drawing" width="600" position='absolute' float='right'/>
