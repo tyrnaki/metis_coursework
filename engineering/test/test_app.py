@@ -67,10 +67,9 @@ for i in dangerous.drug_terms:
             
 dangerous_df = pd.DataFrame(dangerous_drugs)
 
-dangerous_df.value_counts().head(8).plot.bar(x=None, y=None)
-plt.title('Number of posts per Dangerous Topic, Today')
-plt.xlabel('Drug Name')
-plt.ylabel('Number of postings')
+import plotly.express as px
+fig = px.bar(dangerous_df)
+fig.show()
 
 st.write(
 'This is a text'
