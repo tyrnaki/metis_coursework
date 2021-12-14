@@ -7,7 +7,7 @@
 import nltk
 import pandas as pd
 import matplotlib as plt
-import re
+import regex as re
 import string
 from pprint import pprint
 
