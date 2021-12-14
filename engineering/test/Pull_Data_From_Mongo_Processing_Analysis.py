@@ -8,7 +8,7 @@ import nltk
 import pandas as pd
 import matplotlib as plt
 import regex as re
-import string
+import string as string
 from pprint import pprint
 
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
