@@ -9,9 +9,7 @@ import pandas as pd
 import matplotlib as plt
 import re
 import string
-import json
 from pprint import pprint
-from jsonmerge import merge
 
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from nltk.stem import PorterStemmer, SnowballStemmer, LancasterStemmer, WordNetLemmatizer
