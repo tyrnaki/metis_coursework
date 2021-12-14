@@ -3,11 +3,11 @@ import pandas as pd
 import pickle
 import sklearn
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
-from pathlib import Path
+import os
 
-path = Path(__file__).parents[1] / '/for_analysis.csv'
-
-data = pd.read_csv(path)
+path = os.path.dirname(__file__)
+my_file = path+'/photo.png'
+data = pd.read_csv(my_file)
 
 tf_vectorizer = CountVectorizer(strip_accents = 'unicode',
                                 stop_words = 'english',
