@@ -4,7 +4,8 @@ import pickle
 import sklearn
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 
-data = pd.read_csv('for_analysis.csv')
+url = 'https://github.com/tyrnaki/metis_coursework/blob/main/engineering/test/for_analysis.csv'
+data = pd.read_csv(url)
 
 tf_vectorizer = CountVectorizer(strip_accents = 'unicode',
                                 stop_words = 'english',
