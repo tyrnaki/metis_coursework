@@ -6,7 +6,7 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 import os
 
 path = os.path.dirname(__file__)
-my_file = path+'/photo.png'
+my_file = path+'/for_analysis.csv'
 data = pd.read_csv(my_file)
 
 tf_vectorizer = CountVectorizer(strip_accents = 'unicode',
