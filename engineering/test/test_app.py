@@ -10,6 +10,9 @@ db.list_collection_names()
 cursor = db.reddit_data.find()
 most_recent = list(cursor)[0]
 data = pd.DataFrame.from_dict(most_recent.items())
+data.drop(index=data.index[0], 
+        axis=0, 
+        inplace=True)
 
 
 st.write(
