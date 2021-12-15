@@ -110,11 +110,10 @@ col1, col2 = st.columns((1,1))
 
 with col1:
     
+    st.subheader('What are people talking about:',choose_day)
     choose_day = st.selectbox(
      'choose timeframe',
      ('Today', 'Yesterday', 'This Week'))
-    st.subheader('What are people talking about:',choose_day)
-    
     
     st.write('Updated as of x')
     st.dataframe(drugs_today)
