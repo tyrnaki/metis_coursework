@@ -115,9 +115,6 @@ with col1:
     
     st.subheader('What are people talking about -',choose_day)
     
-
-
-st.write('You selected:', option)
     st.write('Updated as of x')
     st.dataframe(drugs_today)
     
