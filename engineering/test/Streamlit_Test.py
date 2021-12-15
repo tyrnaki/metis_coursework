@@ -101,11 +101,6 @@ fig1.update_layout(height=400)
 # NOTE: This must be the first command in your app, and must be set only once
 #st.set_page_config(layout="wide")
 
-components.html(
-    '<h1> Novel Psycoactive Substance Dashboard</h1> '
-    '<p> </p>'
-    )
-
 st.title('Novel Psychoactive Substance Monitoring Dashboard')
 st.write('This dashboard is designed to provide insights into drug trends based off of the subreddit [Research Chemicals](https://www.reddit.com/r/researchchemicals/). Using a Natural Language Processing model, I categorize posts into categories; the charts below provide updated analysis of the text.')
 
@@ -115,10 +110,7 @@ with col1:
     st.plotly_chart(fig1,height=400)
     
 with col2:
-    components.html(
-    '<h1> What are these drugs?</h1> '
-    #'<p> This dashboard is designed to provide insights into drug trends based off of the subreddit <a href=""> Research Chemicals</a>. Using a Natural Language Processing model, I categorize posts into categories; the charts below provide updated analysis of the text.</p>'
-    )
+    st.header('What are these drugs?')
 
 
 # In[ ]:
