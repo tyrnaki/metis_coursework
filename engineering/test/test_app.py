@@ -7,7 +7,7 @@ from pymongo import MongoClient
 client = pymongo.MongoClient("mongodb+srv://wtyrna13:WkuLFvYJ7rUHQXu@cluster0.tpw7j.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",connect=False)
 db = client.new_scrapes
 cursor = db.reddit_data.find()
-most_recent = list(cursor)[-1]
+most_recent = list(cursor)
 data = pd.DataFrame.from_dict(most_recent, orient='index')
 
 
