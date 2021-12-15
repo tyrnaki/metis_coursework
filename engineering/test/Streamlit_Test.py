@@ -101,7 +101,7 @@ fig1.update_layout(height=400)
 # NOTE: This must be the first command in your app, and must be set only once
 st.set_page_config(layout="wide")
 
-col1, col2 = st.beta_columns((2,1))
+col1, col2 = st.columns((1,1))
 
 with col1:
     components.html(
