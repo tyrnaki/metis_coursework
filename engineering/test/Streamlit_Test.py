@@ -103,8 +103,11 @@ fig1.update_layout(height=400)
 
 components.html(
     '<h1> Novel Psycoactive Substance Dashboard</h1> '
-    '<p> This dashboard is designed to provide insights into drug trends based off of the subreddit <a href=""> Research Chemicals</a>. Using a Natural Language Processing model, I categorize posts into categories; the charts below provide updated analysis of the text.</p>'
+    '<p> </p>'
     )
+
+st.title('Novel Psychoactive Substance Monitoring Dashboard')
+st.write('This dashboard is designed to provide insights into drug trends based off of the subreddit [Research Chemicals](https://www.reddit.com/r/researchchemicals/). Using a Natural Language Processing model, I categorize posts into categories; the charts below provide updated analysis of the text.')
 
 col1, col2 = st.columns((1,1))
 
