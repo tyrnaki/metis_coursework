@@ -59,7 +59,6 @@ dangerous_year = one_year_df[mask]
 
 mask = (most_recent_df['drugs_in_text'] != '')
 most_recent_df_effect = most_recent_df[mask]
-most_recent_df_effect
 drugs_today = most_recent_df_effect.filter(['drugs_in_text','effect'], axis=1).reset_index().drop(['index'],axis=1)
 
 
