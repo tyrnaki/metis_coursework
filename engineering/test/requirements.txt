@@ -5,4 +5,5 @@ scikit-learn==0.24.2
 nltk
 regex
 pymongo==4.0.1
+dnspython
 plotly
