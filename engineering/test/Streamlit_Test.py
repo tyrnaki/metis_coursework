@@ -57,8 +57,11 @@ most_recent_df = pd.DataFrame.from_dict(most_recent)
 mask = (one_year_df['effect'] == 'Dangerous')
 dangerous_year = one_year_df[mask]
 
-mask = (most_recent_df['effect'] == 'Dangerous')
-dangerous_recent = most_recent_df[mask]
+mask = (most_recent_df['drugs_in_text'] != '')
+most_recent_df_effect = most_recent_df[mask]
+most_recent_df_effect
+drugs_today = most_recent_df_effect.filter(['drugs_in_text','effect'], axis=1).reset_index().drop(['index'],axis=1)
+
 
 # In[24]:
 
@@ -95,10 +98,6 @@ import plotly.express as px
 fig1 = px.bar(year_danger_df.head(10), x='drug', y='frequency', title='Most Common Drug Terms Associated with Dangerous Effects, One Year')
 fig1.update_layout(height=400)
 
-mask = (most_recent_df['drugs_in_text'] != '')
-most_recent_df_effect = most_recent_df[mask]
-most_recent_df_effect
-drugs_today = most_recent_df_effect.filter(['drugs_in_text','effect'], axis=1).reset_index().drop(['index'],axis=1)
 
 
 # In[42]:
