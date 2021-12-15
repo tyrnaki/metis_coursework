@@ -99,14 +99,14 @@ fig1.update_layout(height=400)
 
 # In[42]:
 # NOTE: This must be the first command in your app, and must be set only once
-st.set_page_config(layout="wide")
-
-col1, col2 = st.columns((1,1))
+#st.set_page_config(layout="wide")
 
 components.html(
     '<h1> Novel Psycoactive Substance Dashboard</h1> '
     '<p> This dashboard is designed to provide insights into drug trends based off of the subreddit <a href=""> Research Chemicals</a>. Using a Natural Language Processing model, I categorize posts into categories; the charts below provide updated analysis of the text.</p>'
     )
+
+col1, col2 = st.columns((1,1))
 
 with col1:
     st.plotly_chart(fig1,height=400)
