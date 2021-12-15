@@ -95,6 +95,10 @@ import plotly.express as px
 fig1 = px.bar(year_danger_df.head(10), x='drug', y='frequency', title='Most Common Drug Terms Associated with Dangerous Effects, One Year')
 fig1.update_layout(height=400)
 
+mask = (most_recent_df['drugs_in_text'] != '')
+most_recent_df_effect = most_recent_df[mask]
+most_recent_df_effect
+drugs_today = most_recent_df_effect.filter(['drugs_in_text','effect'], axis=1).reset_index().drop(['index'],axis=1)
 
 
 # In[42]:
@@ -107,10 +111,14 @@ st.write('This dashboard is designed to provide insights into drug trends based 
 col1, col2 = st.columns((1,1))
 
 with col1:
+    st.subheader('What are people taling about today?')
+    st.write('Updated as of x')
+    st.dataframe(drugs_today)
+    
     st.plotly_chart(fig1,height=400)
     
 with col2:
-    st.header('What are these drugs?')
+    st.subheader('What are these drugs?')
 
 
 # In[ ]:
