@@ -30,25 +30,11 @@ import plotly
 
 # connect to MongoDB, change the << MONGODB URL >> to reflect your own connection string
 client = pymongo.MongoClient("mongodb+srv://wtyrna13:WkuLFvYJ7rUHQXu@cluster0.tpw7j.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
-db = client.test
-
-
-# In[3]:
-
-
-client.database_names()
-
-
-# In[4]:
-
-
 db = client.new_scrapes
-
-
-# In[5]:
-
-
+db.list_collection_names()
 cursor = db.reddit_data.find()
+most_recent = list(cursor)[0]
+
 all_data = list(cursor)
 
 
@@ -56,7 +42,7 @@ all_data = list(cursor)
 
 
 data = []
-for i in all_data[0].values():
+for i in most_recent.values():
     data.append(i)
 data = pd.DataFrame(data)
 data.rename(columns={ data.columns[0]: "text" }, inplace = True)
