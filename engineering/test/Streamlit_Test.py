@@ -110,8 +110,8 @@ col1, col2 = st.columns((1,1))
 
 with col1:
     
-    st.subheader('What are people talking about:',choose_day)
-    choose_day = st.selectbox(
+    st.subheader('What are people talking about:')
+    st.selectbox(
      'choose timeframe',
      ('Today', 'Yesterday', 'This Week'))
     
