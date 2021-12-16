@@ -33,7 +33,7 @@ db = client.for_class
 # In[3]:
 
 
-db.list_collection_names()
+client.database_names()
 
 
 # In[4]:
@@ -94,19 +94,29 @@ def drug_definer(x):
         drug_links_list+drug_string
     return drug_links_list
 
+def drug_lister(x):
+    drug_list = []
+    for i in x:
+        drug_list.append(i)
+    return drug_list
+
+def grab_post(x, selection_for_post):
+    mask = x['drugs_in_text'].str.contains(selection_for_post)
+    new_df = x[mask]
+    return new_df['text'][0]
 # In[42]:
 st.set_page_config(layout="wide")
 
 st.title('Novel Psychoactive Substance Monitoring Dashboard')
-st.write('This dashboard is designed to provide insights into drug trends based off of the subreddit [Research Chemicals](https://www.reddit.com/r/researchchemicals/). Using a Natural Language Processing model, I categorize posts into categories; the charts below provide updated analysis of the text.')
+st.write('This dashboard is designed to provide insights into Novel Psychoactive Substance (NPS) trends based off of the subreddit [Research Chemicals](https://www.reddit.com/r/researchchemicals/). This application uses a Natural Language Processing model to categorize Reddit posts and related drug terms; the charts below provide regularly updated analysis of the text.')
 
 col1, col2, col3= st.columns((2,0.25,1))
 
 with col1:
 	#cols1,_= st.columns((3,1)) # To make it narrower
-	st.subheader('Drug Reactions Over the Past Year:')
+	st.subheader('Reactions to NPS:')
 	selection = st.selectbox(
-	     'choose reaction',
+	     'Choose a reaction',
 	     ('Dangerous', 'Negative', 'Euphoric', 'Psycadelic'))
 
 	format = 'MMM DD, YYYY'  # format output
@@ -114,31 +124,40 @@ with col1:
 	end_date = datetime.now().date()
 	max_days = end_date-start_date
 	        
-	slider = col1.slider('Select date', min_value=start_date, value=end_date ,max_value=end_date, format=format)
+	values = st.slider('Select a timeframe', start_date, end_date, (start_date, end_date))
+	#slider = col1.slider('Select date', min_value=start_date, value=end_date ,max_value=end_date, format=format)
 	        ## Sanity check
-	start_date_t = type(end_date)
+	#start_date_t = type(end_date)
 
-	selected_date = slider.strftime("%b %Y")
+	
+	values_selected_start, values_selected_end = values
+	selected_start_date = values_selected_start.strftime("%b %d %Y")
+	selected_end_date = values_selected_end.strftime("%b %d %Y")
 
-	one_year_df = reaction_masker(selection, start_date, slider)
+	one_year_df = reaction_masker(selection, values_selected_start, values_selected_end)
 	year_df = drugs_counter(one_year_df.drugs_in_text)
 
-	one_year_chart = px.bar(year_df.head(10), x='drug', y='frequency', title='Most Common Drug Terms Associated with '+ selection + ' Effects, from Dec 2020 to '+selected_date)
+	one_year_chart = px.bar(year_df.head(10), x='drug', y='frequency', title='Most Common Drug Terms Associated with '+ selection + ' Effects, from '+selected_start_date+' to '+selected_end_date)
 	one_year_chart.update_layout(height=400)
 
-	st.plotly_chart(one_year_chart, height=400)
+	st.plotly_chart(one_year_chart, height=500)
+
+	st.subheader('What does a '+selection.lower()+' reaction look like with*:')
+	selection_for_post = st.selectbox(
+	     'Choose a substance',
+	     (drug_lister(year_df['drug'].head(10))))
+	st.markdown('***note: these are unedited reddit posts and may contain NSW language**')
+	st.markdown(grab_post(one_year_df, selection_for_post))
 
 with col2:
 	st.text('')
 
 with col3:
 	st.subheader('What are these substances?')
-	st.markdown('The listed substances below correspond to the chart on the left.')
+	st.markdown('The listed substances below correspond to the chart on the lef, click on each to find out more.')
 	drug_links = drug_definer(year_df['drug'].head(10))
 	st.markdown(drug_links)
 
-
-st.components.v1.iframe('https://github.com/tyrnaki/metis_coursework/blob/main/engineering/test/lda.html', width=500, height=500)
 
 
 # In[ ]:
