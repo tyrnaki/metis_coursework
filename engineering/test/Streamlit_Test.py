@@ -33,7 +33,7 @@ db = client.for_class
 # In[3]:
 
 
-db.list_database_names()
+db.list_collection_names()
 
 
 # In[4]:
