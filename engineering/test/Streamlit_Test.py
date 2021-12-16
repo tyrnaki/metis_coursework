@@ -146,7 +146,7 @@ with col1:
 	selection_for_post = st.selectbox(
 	     'Choose a substance',
 	     (drug_lister(year_df['drug'].head(10))))
-	st.markdown('***note: these are unedited reddit posts and may contain NSW language**')
+	st.markdown('***note: these are unedited reddit posts and may contain NSFW language**')
 	st.markdown(grab_post(one_year_df, selection_for_post))
 
 with col2:
@@ -154,7 +154,7 @@ with col2:
 
 with col3:
 	st.subheader('What are these substances?')
-	st.markdown('The listed substances below correspond to the chart on the lef, click on each to find out more.')
+	st.markdown('The listed substances below correspond to the chart on the left, click on each to find out more.')
 	drug_links = drug_definer(year_df['drug'].head(10))
 	st.markdown(drug_links)
 
