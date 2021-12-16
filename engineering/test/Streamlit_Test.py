@@ -108,7 +108,7 @@ def grab_post(x, selection_for_post):
 st.set_page_config(layout="wide")
 
 st.title('Novel Psychoactive Substance Monitoring Dashboard')
-st.write('This dashboard is designed to provide insights into Novel Psychoactive Substance (NPS) trends based off of the subreddit [Research Chemicals](https://www.reddit.com/r/researchchemicals/). This application uses a Natural Language Processing model to categorize Reddit posts and related drug terms; the charts below provide regularly updated analysis of the text.')
+st.write('This dashboard is designed to provide insights into Novel Psychoactive Substance (NPS) trends based off of the subreddit [Research Chemicals](https://www.reddit.com/r/researchchemicals/). This application uses a [Natural Language Processing model](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) to categorize Reddit posts and related drug terms; the charts below provide regularly updated analysis of the text.')
 
 col1, col2, col3= st.columns((2,0.25,1))
 
