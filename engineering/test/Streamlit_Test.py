@@ -117,7 +117,7 @@ with col1:
 	st.subheader('Reactions to NPS:')
 	selection = st.selectbox(
 	     'Choose a reaction',
-	     ('Dangerous', 'Negative', 'Euphoric', 'Psycadelic'))
+	     ('Dangerous', 'Negative', 'Euphoric', 'Psychadelic'))
 
 	format = 'MMM DD, YYYY'  # format output
 	start_date = datetime.now().date()-relativedelta(years=1)  #  I need some range in the past
@@ -134,6 +134,8 @@ with col1:
 	selected_start_date = values_selected_start.strftime("%b %d %Y")
 	selected_end_date = values_selected_end.strftime("%b %d %Y")
 
+	if selection == 'Psychadelic':
+		selection == 'Psycadelic'
 	one_year_df = reaction_masker(selection, values_selected_start, values_selected_end)
 	year_df = drugs_counter(one_year_df.drugs_in_text)
 
