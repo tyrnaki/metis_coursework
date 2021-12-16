@@ -17,6 +17,10 @@ import plotly
 import plotly.express as px
 from collections import Counter
 
+import datetime
+from datetime import datetime, date
+from dateutil.relativedelta import relativedelta # to add days or years
+
 
 # In[2]:
 
@@ -29,7 +33,7 @@ db = client.for_class
 # In[3]:
 
 
-db.list_collection_names()
+client.database_names()
 
 
 # In[4]:
@@ -51,6 +55,11 @@ one_year = all_data[0]
 
 
 one_year_df = pd.DataFrame.from_dict(one_year)
+dates = []
+for i in one_year_df.timestamp:
+        i = i[:10]
+        dates.append(datetime.strptime(i, '%Y-%m-%d').date())
+one_year_df['dates'] = dates
 #today_df = pd.DataFrame.from_dict(today)
 #yesterday_df = pd.DataFrame.from_dict(yesterday)
 
@@ -62,8 +71,8 @@ one_year_df = pd.DataFrame.from_dict(one_year)
 
 # In[24]:
 
-def reaction_masker(x):
-	mask = (one_year_df['effect'] == x)
+def reaction_masker(x, y, z):
+	mask = (y <= one_year_df['dates']) & (one_year_df['dates'] <= z) & (one_year_df['effect'] == x)
 	return one_year_df[mask]
 
 def drugs_counter(x):
@@ -104,14 +113,30 @@ selection = st.selectbox(
      ('Dangerous', 'Negative', 'Euphoric', 'Psycadelic'))
 	
 
-one_year_df = reaction_masker(selection)
+cols1,_ = st.columns((3,1)) # To make it narrower
+format = 'MMM DD, YYYY'  # format output
+start_date = datetime.now().date()-relativedelta(years=1)  #  I need some range in the past
+end_date = datetime.now().date()
+max_days = end_date-start_date
+        
+slider = cols1.slider('Select date', min_value=start_date, value=end_date ,max_value=end_date, format=format)
+        ## Sanity check
+start_date_t = type(end_date)
+
+selected_date = slider.strftime("%b %Y")
+
+one_year_df = reaction_masker(selection, start_date, slider)
 year_df = drugs_counter(one_year_df.drugs_in_text)
-one_year_chart = px.bar(year_df.head(10), x='drug', y='frequency', title='Most Common Drug Terms Associated with '+ selection + ' Effects, One Year')
+one_year_chart = px.bar(year_df.head(10), x='drug', y='frequency', title='Most Common Drug Terms Associated with '+ selection + ' Effects, from Dec 2020 to '+selected_date)
 one_year_chart.update_layout(height=400)
 
 st.plotly_chart(one_year_chart, height=400)
 
 # In[ ]:
+
+
+
+
 
 
 
