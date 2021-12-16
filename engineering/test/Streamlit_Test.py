@@ -139,6 +139,8 @@ with col1:
 	one_year_df = reaction_masker(selection, values_selected_start, values_selected_end)
 	year_df = drugs_counter(one_year_df.drugs_in_text)
 
+	if selection == 'Psycadelic':
+		selection = 'Psychadelic'
 	one_year_chart = px.bar(year_df.head(10), x='drug', y='frequency', title='Most Common Drug Terms Associated with '+ selection + ' Effects, from '+selected_start_date+' to '+selected_end_date)
 	one_year_chart.update_layout(height=400)
 
