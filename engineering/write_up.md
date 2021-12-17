@@ -20,7 +20,7 @@ To expand the corpus of stop words, I included a corpus of the [10,000 most comm
 
 ## Algorithms
 ### Data Collection 
-*Files: [Historic Data Pull](https://github.com/tyrnaki/metis_coursework/blob/1ae7a516013a10526c5dffdd99bdee68fdf4a227/engineering/final/Historic%20Reddit%20Pull.ipynb), [Historic Data Push to Mongo](https://github.com/tyrnaki/metis_coursework/blob/main/engineering/final/MongoDB%20Upload%20Historic%20Data.ipynb), [Daily Data Pull, Push to Mongo](https://github.com/tyrnaki/metis_coursework/blob/1ae7a516013a10526c5dffdd99bdee68fdf4a227/engineering/final/API_to_Mongo.py)*
+*Files: [Historic Data Pull](https://github.com/tyrnaki/metis_coursework/blob/1ae7a516013a10526c5dffdd99bdee68fdf4a227/engineering/final/Historic%20Reddit%20Pull.ipynb), [Historic Data Push to Mongo](https://github.com/tyrnaki/metis_coursework/blob/main/engineering/final/MongoDB%20Upload%20Historic%20Data.ipynb), [Daily Data Pull, Push to Mongo](https://github.com/tyrnaki/metis_coursework/blob/c4a315ced53570c081f823d64a9a612b21363582/engineering/final/Reddit_Daily_Pull.py)*
 
 *Historic Data:*
 1. Build function to determine unicode dates & build in sleep to avoid scrape time out.
