@@ -7,6 +7,7 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
+import config
 
 import pymongo
 from pymongo import MongoClient
@@ -26,7 +27,7 @@ from dateutil.relativedelta import relativedelta # to add days or years
 
 
 # connect to MongoDB, change the << MONGODB URL >> to reflect your own connection string
-client = pymongo.MongoClient("mongodb+srv://wtyrna13:WkuLFvYJ7rUHQXu@cluster0.tpw7j.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+client = pymongo.MongoClient(config.uri)
 db = client.for_class
 
 
