@@ -148,7 +148,7 @@ with col1:
 
 	st.plotly_chart(one_year_chart, height=500)
 
-	st.subheader('What does a '+selection.lower()+' reaction look like with*:')
+	st.subheader('What does a '+selection.lower()+' post look like with*:')
 	selection_for_post = st.selectbox(
 	     'Choose a substance',
 	     (drug_lister(year_df['drug'].head(10))))
