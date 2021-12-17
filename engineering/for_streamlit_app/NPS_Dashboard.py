@@ -48,7 +48,7 @@ all_data = list(cursor)
 
 
 one_year = all_data[0]
-#today = all_data[-1]
+today = all_data[-1]
 #yesterday = all_data[-2]
 
 
@@ -61,7 +61,7 @@ for i in one_year_df.timestamp:
         i = i[:10]
         dates.append(datetime.strptime(i, '%Y-%m-%d').date())
 one_year_df['dates'] = dates
-#today_df = pd.DataFrame.from_dict(today)
+today_df = pd.DataFrame.from_dict(today)
 #yesterday_df = pd.DataFrame.from_dict(yesterday)
 
 
@@ -103,6 +103,12 @@ def drug_lister(x):
         drug_list.append(i)
     return drug_list
 
+def drug_string(x):
+    drug_string = ""
+    for i in x:
+        drug_string += i
+    return drug_string
+
 def grab_post(x, selection_for_post):
     mask = x['drugs_in_text'].str.contains(selection_for_post)
     new_df = x[mask]
@@ -112,6 +118,12 @@ st.set_page_config(layout="wide")
 
 st.title('Novel Psychoactive Substance Monitoring Dashboard')
 st.write('This dashboard is designed to provide insights into Novel Psychoactive Substance (NPS) trends based off of the subreddit [Research Chemicals](https://www.reddit.com/r/researchchemicals/). This application uses a [Natural Language Processing model](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) to categorize Reddit posts and related drug terms; the charts below provide regularly updated analysis of the text.')
+
+df_f = drugs_counter(today_df['drugs_in_text'])
+today_string = drug_string(df['drug'])
+
+st.markdown('Which substances are people talking about today?')
+st.markdown(today_string)
 
 col1, col2, col3= st.columns((2,0.25,1))
 
