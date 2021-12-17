@@ -106,7 +106,7 @@ def drug_lister(x):
 def drug_string(x):
     drug_string = ""
     for i in x:
-        drug_string += i
+        drug_string += i+" "
     return drug_string
 
 def grab_post(x, selection_for_post):
@@ -122,7 +122,7 @@ st.write('This dashboard is designed to provide insights into Novel Psychoactive
 df_f = drugs_counter(today_df['drugs_in_text'])
 today_string = drug_string(df_f['drug'])
 
-st.markdown('Which substances are people talking about today?')
+st.subheader('Which substances are people talking about today?')
 st.markdown(today_string)
 
 col1, col2, col3= st.columns((2,0.25,1))
