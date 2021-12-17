@@ -120,7 +120,7 @@ st.title('Novel Psychoactive Substance Monitoring Dashboard')
 st.write('This dashboard is designed to provide insights into Novel Psychoactive Substance (NPS) trends based off of the subreddit [Research Chemicals](https://www.reddit.com/r/researchchemicals/). This application uses a [Natural Language Processing model](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) to categorize Reddit posts and related drug terms; the charts below provide regularly updated analysis of the text.')
 
 df_f = drugs_counter(today_df['drugs_in_text'])
-today_string = drug_string(df['drug'])
+today_string = drug_string(df_f['drug'])
 
 st.markdown('Which substances are people talking about today?')
 st.markdown(today_string)
