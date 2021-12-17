@@ -84,7 +84,7 @@ def drugs_counter(x):
 	counter_y_d = Counter(drugs_y)
 	df = pd.DataFrame.from_dict(counter_y_d, orient='index').reset_index()
 	df.rename(columns={ df.columns[0]: "drug" , df.columns[1]: "frequency" }, inplace = True)
-	df = df[df["drug"].str.contains("benzo",'benzos)==False]
+	df = df[df["drug"].str.contains("benzo",'benzos')==False]
 	#df = df[df["drug"].str.contains("benzo")==False]
 	return df.sort_values(by=['frequency'], ascending=False)
 
